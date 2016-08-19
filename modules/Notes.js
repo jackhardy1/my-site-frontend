@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-import Note from './Note'
-import CreateNote from './CreateNote'
+import Note from './Note';
+import CreateNote from './CreateNote';
 
 const notes = [
   {
@@ -19,6 +19,7 @@ const notes = [
 ];
 
 export default class Notes extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -29,7 +30,8 @@ export default class Notes extends React.Component {
 
   renderItems() {
     return _.map(notes, (note, index) => <Note key={index} {...note}
-    toggleTask = {this.toggleTask.bind(this)}/>);
+    toggleTask = {this.toggleTask.bind(this)}
+    saveTask = {this.saveTask.bind(this)}/>);
   }
 
   render() {
@@ -53,6 +55,12 @@ export default class Notes extends React.Component {
   toggleTask(task){
     const foundNote = _.find(notes, note => note.task == task)
     foundNote.isCompleted = !foundNote.isCompleted;
+    this.setState({ notes })
+  }
+
+  saveTask(oldTask, newTask) {
+    const foundNote = _.find(notes, note => note.task == oldTask)
+    foundNote.task = newTask;
     this.setState({ notes })
   }
 }
