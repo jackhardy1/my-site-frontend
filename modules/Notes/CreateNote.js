@@ -1,5 +1,5 @@
 import React from 'react';
-import Notes from './Notes';
+import NotesList from './NotesList';
 
 export default class CreateNote extends React.Component {
 

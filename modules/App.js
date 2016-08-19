@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import NavLink from './NavLink'
 import Home from './Home'
-import Notes from './Notes/Notes'
+import Notes from './Notes/NotesList'
 import { IndexLink } from 'react-router'
 
 export default React.createClass({

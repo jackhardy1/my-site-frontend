@@ -18,7 +18,7 @@ const notes = [
   }
 ];
 
-export default class Notes extends React.Component {
+export default class NotesList extends React.Component {
 
   constructor(props) {
     super(props);
