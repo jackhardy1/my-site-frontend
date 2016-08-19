@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import NavLink from './NavLink'
 import Home from './Home'
-import Notes from './Notes'
+import Notes from './Notes/Notes'
 import { IndexLink } from 'react-router'
 
 export default React.createClass({
@@ -16,11 +16,7 @@ export default React.createClass({
           <li><NavLink to="/notes" activeClassName="active">Notes</NavLink></li>
           <li><NavLink to="/repos" activeClassName="active">Repos</NavLink></li>
         </ul>
-          <Notes>
-          </Notes>
-
         {this.props.children}
-
       </div>
     )
   }

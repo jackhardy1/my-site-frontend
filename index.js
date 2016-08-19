@@ -8,7 +8,7 @@ import About from './modules/About'
 import Repos from './modules/Repos'
 import Repo from './modules/Repo'
 import Home from './modules/Home'
-import Notes from './modules/Notes'
+import Notes from './modules/Notes/Notes'
 
 render((
   <Router history={browserHistory}>
@@ -20,7 +20,7 @@ render((
       <Route path="/notes" component={Notes}/>
       <Route path="/repos/:userName/:repoName" component={Repo}/>
       <Route path="/about" component={About}/>
-      
+
     </Route>
   </Router>
 ), document.getElementById('app'))
