@@ -31,13 +31,14 @@ export default class Notes extends React.Component {
   renderItems() {
     return _.map(notes, (note, index) => <Note key={index} {...note}
     toggleTask = {this.toggleTask.bind(this)}
-    saveTask = {this.saveTask.bind(this)}/>);
+    saveTask = {this.saveTask.bind(this)}
+    deleteTask = {this.deleteTask.bind(this)}/>);
   }
 
   render() {
     return (
         <div>
-          <CreateNote
+          <CreateNote notes={notes}
           createTask={this.createTask.bind(this)}/>
           {this.renderItems()}
         </div>
@@ -53,14 +54,19 @@ export default class Notes extends React.Component {
   }
 
   toggleTask(task){
-    const foundNote = _.find(notes, note => note.task == task)
+    const foundNote = _.find(notes, note => note.task === task)
     foundNote.isCompleted = !foundNote.isCompleted;
     this.setState({ notes })
   }
 
   saveTask(oldTask, newTask) {
-    const foundNote = _.find(notes, note => note.task == oldTask)
+    const foundNote = _.find(notes, note => note.task === oldTask)
     foundNote.task = newTask;
+    this.setState({ notes })
+  }
+
+  deleteTask(taskToDelete) {
+    _.remove(notes, note => note.task === taskToDelete);
     this.setState({ notes })
   }
 }
