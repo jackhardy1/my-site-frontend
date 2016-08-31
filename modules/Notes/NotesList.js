@@ -37,7 +37,7 @@ export default class NotesList extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className="items">
           <CreateNote notes={notes}
           createTask={this.createTask.bind(this)}/>
           {this.renderItems()}

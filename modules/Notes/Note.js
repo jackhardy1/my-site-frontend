@@ -5,10 +5,7 @@ export default class Note extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      isEditing: false
-    };
+    this.state = {isEditing: false};
   }
 
   renderTaskSection(){
@@ -35,6 +32,7 @@ export default class Note extends React.Component {
   }
 
   renderActionsSection() {
+
     if (this.state.isEditing) {
       return (
         <td>
@@ -45,23 +43,27 @@ export default class Note extends React.Component {
     }
 
     return (
-            <td>
-              <button onClick={this.onEditClick.bind(this)}>Edit</button>
-              <button onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
-            </td>
-          );
+      <td>
+        <button className="edit btn btn-sm btn-primary glyphicon glyphicon-pencil"
+          onClick={this.onEditClick.bind(this)}>Edit</button>
+        <button className="delete btn btn-sm btn-danger glyphicon glyphicon-remove"
+          onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
+      </td>
+    );
   }
 
   render() {
     return (
-    <table>
-      <thead>
-        <tr>
-          {this.renderTaskSection()}
-          {this.renderActionsSection()}
-        </tr>
-      </thead>
-    </table>
+    <div className="note">
+      <table>
+        <thead>
+          <tr>
+            {this.renderTaskSection()}
+            {this.renderActionsSection()}
+          </tr>
+        </thead>
+      </table>
+    </div>
     )
   }
 
@@ -82,5 +84,4 @@ export default class Note extends React.Component {
     this.props.saveTask(oldTask,newTask);
     this.setState({ isEditing: false });
   }
-
 }

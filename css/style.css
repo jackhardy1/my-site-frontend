@@ -1,0 +1,73 @@
+* {
+  font-size: 12;
+}
+
+div.wrapper {
+  background-color: transparent;
+  filter: alpha(opacity=60);
+}
+
+h1.title {
+  font-family: 'COUTUREBold';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15;
+  background-color: transparent;
+}
+
+html {
+  background-image: url("http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@media screen and (min-width: 480px) {
+  .wrapper {
+      background-color: #e6f9ff;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+      background-color: #33ccff;
+  }
+}
+
+button.delete {
+  width: 80px;
+}
+
+button.edit {
+}
+
+button.cancel {
+}
+
+button.save {
+}
+
+.top-nav {
+  color: black;
+  list-style: none;
+  margin: 0;
+  background: deepskyblue;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'COUTUREBold';
+  font-weight: bold;
+  font-style: normal;
+}
+
+.top-nav li {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.items {
+  padding: 1em;
+  border: 6px solid black;
+}

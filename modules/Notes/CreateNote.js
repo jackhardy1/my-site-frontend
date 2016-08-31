@@ -19,7 +19,7 @@ export default class CreateNote extends React.Component {
     return (
       <form onSubmit={this.handleCreate.bind(this)}>
         <input type="text" placeholder="write note here" ref="createInput"/>
-        <button> Create </button>
+        <button className="btn btn-sm btn-success glyphicon glyphicon-plus"> Create </button>
         {this.renderError()}
       </form>
     );
@@ -42,8 +42,6 @@ export default class CreateNote extends React.Component {
   }
 
   validateInput(task) {
-    console.log(task);
-    console.log(this.props.notes);
     if (!task) {
       return 'please enter a task'
     } else if (_.find(this.props.notes, note => note.task === task)) {
